@@ -1,3 +1,27 @@
+// Basic Operators
+const now = 2037
+const ageKas = now - 1988;
+const ageChuChu = now - 2007;
+console.log(ageKas, ageChuChu);
+console.log(ageKas * 2, ageKas / 10, 2 ** 3);
+
+const firstName = "Doyoung";
+const lastName = "Song"
+console.log(firstName + " " + lastName);
+
+let x = 10 + 5;
+x += 10
+x *= 4
+x++;
+x--;
+console.log(x);
+
+console.log(ageKas > ageChuChu);
+
+const isFullAge = ageChuChu >= 18;
+console.log(isFullAge);
+
+/*
 // let, const and var
 let age = 30;
 age = 31;
@@ -7,7 +31,7 @@ const birthYear = 1988;
 var job = "Programmer"
 job = "Software Engineer"
 
-/*
+
 let js = "amazing";
 console.log(40 + 8 + 23 - 10);
 
