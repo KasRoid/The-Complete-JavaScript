@@ -1,3 +1,18 @@
+
+// Operator Precedence
+const now = 2037;
+const ageKas = now - 1988;
+const ageChu = now - 2009;
+console.log(now - 1991 > now - 2018);
+
+let x, y;
+x = y = 25 - 10 - 5;
+console.log(x, y);
+
+const averageAge = (ageKas + ageChu) / 2;
+console.log(ageKas, ageChu, averageAge)
+
+/*
 // Basic Operators
 const now = 2037
 const ageKas = now - 1988;
@@ -21,7 +36,6 @@ console.log(ageKas > ageChuChu);
 const isFullAge = ageChuChu >= 18;
 console.log(isFullAge);
 
-/*
 // let, const and var
 let age = 30;
 age = 31;
