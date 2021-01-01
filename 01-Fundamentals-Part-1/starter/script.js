@@ -1,4 +1,27 @@
+// Coding Challenge
 
+// const marksWeight = 78;
+// const marksHeight = 1.69;
+// const johnsWeight = 92;
+// const johnsHeight = 1.95;
+
+const marksWeight = 95;
+const marksHeight = 1.88;
+const johnsWeight = 85;
+const johnsHeight = 1.76;
+
+const marksBMI = marksWeight / marksHeight ** 2;
+const marksBMI2 = marksWeight / (marksHeight * marksHeight);
+const johnsBMI = johnsWeight / johnsHeight ** 2;
+const johnsBMI2 = johnsWeight / (johnsHeight * johnsHeight);
+
+const markHigherBMI = marksBMI > johnsBMI;
+const markHigherBMI2 = marksBMI2 > johnsBMI2;
+
+console.log(markHigherBMI, marksBMI, johnsBMI);
+console.log(markHigherBMI2, marksBMI2, johnsBMI2);
+
+/*
 // Operator Precedence
 const now = 2037;
 const ageKas = now - 1988;
@@ -12,7 +35,7 @@ console.log(x, y);
 const averageAge = (ageKas + ageChu) / 2;
 console.log(ageKas, ageChu, averageAge)
 
-/*
+
 // Basic Operators
 const now = 2037
 const ageKas = now - 1988;
