@@ -1,3 +1,24 @@
+const age = 15;
+const isOldEnough = age >= 18;
+
+if (isOldEnough) {
+    console.log(`Kas can start driving license`);
+} else {
+    const yearsLeft = 18 - age;
+    console.log(`Kas is too young Wait another ${yearsLeft} years :)`);
+}
+
+const birthYear = 1991;
+let century;
+if (birthYear <= 2000) {
+    century = 20;
+} else {
+    century = 21;
+}
+console.log(century);
+
+/*
+// Strings and Template Literals
 const firstName = "Jonas";
 const job = "teacher";
 const birthYear = 1991;
@@ -18,7 +39,6 @@ console.log(`String
 multiple
 lines`);
 
-/*
 // Coding Challenge
 
 // const marksWeight = 78;
