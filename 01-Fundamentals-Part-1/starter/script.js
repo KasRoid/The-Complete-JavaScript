@@ -1,3 +1,17 @@
+// Coding Challenge 2
+const marksBMI = 28.3;
+const johnsBMI = 23.9;
+
+if (marksBMI > johnsBMI) {
+    console.log(`Mark's BMI (${marksBMI}) is higher than John's (${johnsBMI})!`);
+} else if (marksBMI == johnsBMI) {
+    console.log(`Same`)
+} else {
+    console.log(`John's BMI (${johnsBMI}) is higher than Mark's (${marksBMI})`)
+}
+
+/*
+// Taking Decisions: If/Else Statements
 const age = 15;
 const isOldEnough = age >= 18;
 
@@ -17,7 +31,6 @@ if (birthYear <= 2000) {
 }
 console.log(century);
 
-/*
 // Strings and Template Literals
 const firstName = "Jonas";
 const job = "teacher";
