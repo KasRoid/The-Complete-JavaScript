@@ -1,3 +1,26 @@
+// Truthy and Falsy Values
+// Falsy Values - 0, '', undefined, null, NaN
+console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean(''));
+console.log(Boolean(null));
+console.log(Boolean(NaN));
+
+const money = 0;
+if (money) {
+    console.log("Don't spend it all");
+} else {
+    console.log("You should get a job!");
+}
+
+let height;
+if (height) {
+    console.log("YaY! Height is defined");
+} else {
+    console.log("Height is undefined");
+}
+
+/*
 // Type Conversion and Coercion
 // Type Conversion
 const inputYear = `1991`;
@@ -20,7 +43,6 @@ let n = "1" + 1;
 n = n - 1;
 console.log(n)
 
-/*
 // Coding Challenge 2
 const marksBMI = 28.3;
 const johnsBMI = 23.9;
