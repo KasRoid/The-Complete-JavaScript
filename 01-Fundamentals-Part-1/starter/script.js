@@ -1,3 +1,22 @@
+// Logical Operators
+const hasDriversLicense = true; // A
+const hasGoodVision = false; // B
+
+console.log(hasDriversLicense && hasGoodVision);
+console.log(hasDriversLicense || hasGoodVision);
+console.log(!hasDriversLicense);
+
+const shouldDrive = hasDriversLicense && hasGoodVision;
+if (shouldDrive) {
+    console.log('Sarah is able to drive');
+} else {
+    console.log('Someone else should drive...');
+}
+
+const isTired = true; // C
+console.log(hasDriversLicense || hasGoodVision || isTired);
+
+/*
 // Equality Operators
 const age = "18";
 if (age === 18) console.log("You just became an adult (strict)");
@@ -20,7 +39,6 @@ if (favorite !== 23) console.log("Why not 23?");
 
 if (favorite === 23) console.log("Cool! 23 is an amazing number! (strict)");
 
-/*
 // Truthy and Falsy Values
 // Falsy Values - 0, '', undefined, null, NaN
 console.log(Boolean(0));
