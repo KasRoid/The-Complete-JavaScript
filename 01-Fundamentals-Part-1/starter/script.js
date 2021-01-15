@@ -1,3 +1,59 @@
+// Coding Challenge 3
+let dolphins1 = 96;
+let dolphins2 = 108;
+let dolphins3 = 89;
+let dolphinsAverage = (dolphins1 + dolphins2 + dolphins3) / 3;
+
+let koalas1 = 88;
+let koalas2 = 91;
+let koalas3 = 110;
+let koalasAverage = (koalas1 + koalas2 + koalas3) / 3;
+
+if (dolphinsAverage > koalasAverage) {
+    console.log('Dolphin is Winner');
+} else if (dolphinsAverage < koalasAverage) {
+    console.log('Koala is Winner');
+} else {
+    console.log('DRAW');
+}
+console.log(`Dolphin: ${dolphinsAverage}, Koalas: ${koalasAverage}`);
+
+dolphins1 = 97;
+dolphins2 = 112;
+dolphins3 = 101;
+dolphinsAverage = (dolphins1 + dolphins2 + dolphins3) / 3;
+
+koalas1 = 109;
+koalas2 = 95;
+koalas3 = 123;
+koalasAverage = (koalas1 + koalas2 + koalas3) / 3;
+
+if (dolphinsAverage > koalasAverage && dolphinsAverage >= 100) {
+    console.log('Dolphin is Winner');
+} else if (dolphinsAverage < koalasAverage && koalasAverage >= 100) {
+    console.log('Koala is Winner');
+} else {
+    console.log('DRAW');
+}
+
+console.log(`Dolphin: ${dolphinsAverage}, Koalas: ${koalasAverage}`);
+
+koalas3 = 106;
+koalasAverage = (koalas1 + koalas2 + koalas3) / 3;
+
+if (dolphinsAverage > koalasAverage && dolphinsAverage > 100) {
+    console.log('Dolphin is Winner');
+} else if (dolphinsAverage < koalasAverage && koalasAverage > 100) {
+    console.log('Koala is Winner');
+} else if (dolphinsAverage === koalasAverage && dolphinsAverage > 100 && koalasAverage > 100) {
+    console.log('DRAW');
+} else {
+    console.log('No Winner');
+}
+
+console.log(`Dolphin: ${dolphinsAverage}, Koalas: ${koalasAverage}`);
+
+/*
 // Logical Operators
 const hasDriversLicense = true; // A
 const hasGoodVision = false; // B
@@ -16,7 +72,6 @@ if (shouldDrive) {
 const isTired = true; // C
 console.log(hasDriversLicense || hasGoodVision || isTired);
 
-/*
 // Equality Operators
 const age = "18";
 if (age === 18) console.log("You just became an adult (strict)");
