@@ -1,5 +1,19 @@
-// The switch statement
+// Statements and Expressions
+// Statements - it produce values
+3 + 4
+1991
+true && false && !false
 
+// Expressions
+if (23 > 10) {
+    const str = '23 is bigger';
+}
+
+const me = 'kas'
+console.log(`I'm ${2037 - 1988} years old ${me}.`)
+
+/*
+// The switch statement
 const day = 'monday';
 switch (day) {
     case 'monday': // day === 'monday'
@@ -40,8 +54,6 @@ if (day === 'monday') {
     console.log('Not a valid day!');
 }
 
-
-/*
 // Coding Challenge 3
 let dolphins1 = 96;
 let dolphins2 = 108;
