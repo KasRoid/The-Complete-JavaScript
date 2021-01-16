@@ -1,3 +1,9 @@
+// Coding Challenge #4
+const payment = 275;
+const tip = payment < 50 || payment > 300 ? payment * 0.20 : payment * 0.15;
+console.log(`The bill was ${payment}, the tip was ${tip}, and the total value ${payment + tip}`);
+
+/*
 // The Conditional Operators
 const age = 23;
 age >= 18 ? console.log('I like to drink wine🍷') : console.log('I like to drink water💧');
@@ -5,7 +11,6 @@ age >= 18 ? console.log('I like to drink wine🍷') : console.log('I like to dri
 const drink = age >= 18 ? 'wine🍷' : "water💧"
 console.log(drink)
 
-/*
 // Statements and Expressions
 // Statements - it produce values
 3 + 4
