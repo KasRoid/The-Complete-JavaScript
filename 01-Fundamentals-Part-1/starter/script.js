@@ -1,3 +1,11 @@
+// The Conditional Operators
+const age = 23;
+age >= 18 ? console.log('I like to drink wine🍷') : console.log('I like to drink water💧');
+
+const drink = age >= 18 ? 'wine🍷' : "water💧"
+console.log(drink)
+
+/*
 // Statements and Expressions
 // Statements - it produce values
 3 + 4
@@ -12,7 +20,6 @@ if (23 > 10) {
 const me = 'kas'
 console.log(`I'm ${2037 - 1988} years old ${me}.`)
 
-/*
 // The switch statement
 const day = 'monday';
 switch (day) {
