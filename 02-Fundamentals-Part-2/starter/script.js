@@ -1,4 +1,25 @@
 'use strict';
+// Reviewing Functions
+
+const calcAge = function (birthYear) {
+    return 2021 - birthYear;
+}
+
+const yearsUntilRetirement = (birthYear, firstName) => {
+    const age = calcAge(birthYear);
+    const retirement = 65 - age;
+    if (retirement > 0) {
+        return retirement;
+    } else {
+        return -1
+    }
+}
+
+console.log(yearsUntilRetirement(1988, 'Kas'));
+console.log(yearsUntilRetirement(1970, 'Mike'));
+console.log(yearsUntilRetirement(1940, 'David'));
+
+/*
 // Functions Calling Other Functions
 function cutFruitPieces(fruit) {
     return fruit * 4;
@@ -13,7 +34,6 @@ function fruitProcessor(apples, oranges) {
 
 console.log(fruitProcessor(2, 3));
 
-/*
 // Arrow Functions
 const calcAge3 = birthYear => 2021 - birthYear;
 const myAge3 = calcAge3(1988);
