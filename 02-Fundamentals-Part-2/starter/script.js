@@ -1,4 +1,35 @@
 'use strict';
+// Coding Challenge #1
+const dolphinsScore1 = 44;
+const dolphinsScore2 = 23;
+const dolphinsScore3 = 71;
+
+const koalasScore1 = 65;
+const koalasScore2 = 54;
+const koalasScore3 = 49;
+
+const calcAverage = (score1, score2, score3) => {
+    return (score1, score2, score3) / 3;
+}
+
+const dolphinsAvg1 = calcAverage(dolphinsScore1, dolphinsScore2, dolphinsScore3);
+const koalasAvg1 = calcAverage(koalasScore1, koalasScore2, koalasScore3);
+
+checkWinner(dolphinsAvg1, koalasAvg1);
+
+function checkWinner(avgDolphins, avgKoalas) {
+    if (avgDolphins >= avgKoalas * 2) {
+        console.log(`Dolphins win (${avgDolphins} vs. ${avgKoalas})`);
+    } else if (avgKoalas >= avgDolphins * 2) {
+        console.log(`Koalas win (${avgKoalas} vs. ${avgDolphins})`);
+    } else {
+        console.log('No team wins')
+    }
+}
+
+
+
+/*
 // Reviewing Functions
 
 const calcAge = function (birthYear) {
@@ -19,7 +50,6 @@ console.log(yearsUntilRetirement(1988, 'Kas'));
 console.log(yearsUntilRetirement(1970, 'Mike'));
 console.log(yearsUntilRetirement(1940, 'David'));
 
-/*
 // Functions Calling Other Functions
 function cutFruitPieces(fruit) {
     return fruit * 4;
