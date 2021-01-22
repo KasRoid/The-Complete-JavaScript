@@ -1,4 +1,39 @@
 'use strict';
+
+const friends = ['Michael', 'Steven', 'Peter'];
+console.log(friends);
+
+const years = new Array(1991, 1984, 2008, 2020);
+
+console.log(friends[0]);
+console.log(friends[2]);
+
+console.log(friends.length); // Counting properties in the array
+console.log(friends[friends.length - 1]); // Access to last property
+
+friends[2] = 'Jay';
+console.log(friends);
+
+const firstName = 'Kas';
+const kas = [firstName, 'song', 2021 - 1988, 'teacher', friends];
+console.log(kas);
+
+// Exercise
+const calcAge = function (birthYear) {
+    return 2021 - birthYear;
+}
+
+const years2 = [1990, 1967, 2002, 2010, 2018];
+console.log(calcAge(years)); // NaN
+
+const age1 = calcAge(years2[0]);
+const age2 = calcAge(years2[1]);
+const age3 = calcAge(years2[years2.length - 1]);
+
+const ages = [age1, age2, age3];
+console.log(ages);
+
+/*
 // Coding Challenge #1
 const dolphinsScore1 = 44;
 const dolphinsScore2 = 23;
@@ -27,9 +62,6 @@ function checkWinner(avgDolphins, avgKoalas) {
     }
 }
 
-
-
-/*
 // Reviewing Functions
 
 const calcAge = function (birthYear) {
