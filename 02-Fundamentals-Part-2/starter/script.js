@@ -1,5 +1,33 @@
 'use strict';
 
+// Basic Array Operations
+const friends = ['Michael', 'Steven', 'Peter'];
+
+// Add elements
+const newLength = friends.push('Jay');
+
+console.log(friends);
+console.log(newLength);
+
+friends.unshift('John');
+console.log(friends);
+
+// Remove elements
+friends.pop();
+console.log(friends);
+
+friends.shift();
+console.log(friends);
+
+console.log(friends.indexOf('Steven'));
+console.log(friends.indexOf('Bob')); // -1
+
+console.log(friends.includes('Steven')); // True
+console.log(friends.includes('Bob')); // False
+
+/*
+// Introduction to Arrays
+
 const friends = ['Michael', 'Steven', 'Peter'];
 console.log(friends);
 
@@ -33,7 +61,6 @@ const age3 = calcAge(years2[years2.length - 1]);
 const ages = [age1, age2, age3];
 console.log(ages);
 
-/*
 // Coding Challenge #1
 const dolphinsScore1 = 44;
 const dolphinsScore2 = 23;
