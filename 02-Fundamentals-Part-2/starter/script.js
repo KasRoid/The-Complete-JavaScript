@@ -1,5 +1,25 @@
 'use strict';
 
+// Coding Challenge #2
+const calcTip = bill => {
+    if (bill >= 50 && bill <= 300) {
+        return bill * 0.15;
+    } else {
+        return bill * 0.2;
+    }
+}
+
+const bills = [125, 555, 44];
+
+console.log(calcTip(bills[0]));
+console.log(calcTip(bills[1]));
+console.log(calcTip(bills[2]));
+
+const total = [bills[0] + calcTip(bills[0]), bills[1] + calcTip(bills[1]), bills[2] + calcTip(bills[2])];
+
+console.log(total);
+
+/*
 // Basic Array Operations
 const friends = ['Michael', 'Steven', 'Peter'];
 
@@ -25,7 +45,6 @@ console.log(friends.indexOf('Bob')); // -1
 console.log(friends.includes('Steven')); // True
 console.log(friends.includes('Bob')); // False
 
-/*
 // Introduction to Arrays
 
 const friends = ['Michael', 'Steven', 'Peter'];
