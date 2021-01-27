@@ -32,6 +32,8 @@ Date: Dec 18, 2020 - TBD
   - Statement and Expressions
   - Operators
   - Strict Mode
+  - Functions
+  - Arrays
 
 ---
 
