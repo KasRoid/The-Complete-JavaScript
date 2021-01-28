@@ -1,5 +1,15 @@
 'use strict';
 
+// Introduction to Objects
+const jonas = {
+    firstName: 'Jonas',
+    lastName: 'Schmedtmann',
+    age: 2037 - 1991,
+    job: 'teacher',
+    friends: ['Michael', 'Peter', 'Steven']
+}
+
+/*
 // Coding Challenge #2
 const calcTip = bill => {
     if (bill >= 50 && bill <= 300) {
@@ -19,7 +29,6 @@ const total = [bills[0] + calcTip(bills[0]), bills[1] + calcTip(bills[1]), bills
 
 console.log(total);
 
-/*
 // Basic Array Operations
 const friends = ['Michael', 'Steven', 'Peter'];
 
