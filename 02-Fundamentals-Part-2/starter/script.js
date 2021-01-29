@@ -1,5 +1,37 @@
 'use strict';
 
+// Dot vs. Bracket Notation
+const kas = {
+    firstName: 'Kas',
+    lastName: 'Song',
+    age: 2021 - 1988,
+    job: 'iOS Developer',
+    friends: ['Michael', 'Peter', 'Steven']
+};
+console.log(kas);
+console.log(kas.lastName);
+console.log(kas['lastName']);
+
+const nameKey = 'Name';
+console.log(kas['first' + nameKey]);
+console.log(kas['last' + nameKey]);
+
+const interestedIn = prompt('What do you want to know about Kas? Choose between firstName, lastName, age, job, and friends');
+
+if (kas[interestedIn]) {
+    console.log(kas[interestedIn]);
+} else {
+    console.log('Wrong request! Choose between firstName, lastName, age, job, and friends');
+}
+
+kas.location = 'South Korea';
+kas['email'] = 'KasRoid@gmail.com';
+console.log(kas);
+
+// Challenge
+console.log(`${kas.firstName} has ${kas.friends.length} friends, and his best friend is called ${kas.friends[0]}`);
+
+/*
 // Introduction to Objects
 const jonas = {
     firstName: 'Jonas',
@@ -7,9 +39,8 @@ const jonas = {
     age: 2037 - 1991,
     job: 'teacher',
     friends: ['Michael', 'Peter', 'Steven']
-}
+};
 
-/*
 // Coding Challenge #2
 const calcTip = bill => {
     if (bill >= 50 && bill <= 300) {
