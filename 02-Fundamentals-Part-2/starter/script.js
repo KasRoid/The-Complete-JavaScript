@@ -1,5 +1,39 @@
 'use strict';
 
+// Coding Challenges #3
+const mark = {
+    fullName: 'Mark Miller',
+    mass: 78,
+    height: 1.69,
+
+    calcBMI: function () {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    }
+};
+
+const john = {
+    fullName: 'John Smith',
+    mass: 92,
+    height: 1.95,
+
+    calcBMI: function () {
+        this.bmi = this.mass / (this.height * this.height);
+        return this.bmi;
+    }
+};
+
+const compareBMI = (lhs, rhs) => {
+    if (lhs > rhs) {
+        console.log(`Mark's BMI (${lhs}) is higher than John's (${rhs})!`);
+    } else if (rhs > lhs) {
+        console.log(`John's BMI (${rhs}) is higher than Mark's (${lhs})!`);
+    }
+};
+
+compareBMI(mark.calcBMI(), john.calcBMI());
+
+/*
 // Objects Methods
 const kas = {
     firstName: 'Kas',
@@ -29,7 +63,6 @@ kas.calcAge3();
 console.log(kas.age);
 console.log(kas.getSummary());
 
-/*
 // Dot vs. Bracket Notation
 const kas = {
     firstName: 'Kas',
