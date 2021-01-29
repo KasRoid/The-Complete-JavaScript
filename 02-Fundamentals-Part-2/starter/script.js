@@ -1,5 +1,35 @@
 'use strict';
 
+// Objects Methods
+const kas = {
+    firstName: 'Kas',
+    lastName: 'Song',
+    birthYear: 1988,
+    job: 'iOS Developer',
+    friends: ['Michael', 'Peter', 'Steven'],
+    hasDriversLicense: true,
+    calcAge1: function (birthYear) {
+        return 2021 - birthYear;
+    },
+    calcAge2: function () {
+        return 2021 - this.birthYear;
+    },
+    calcAge3: function () {
+        this.age = 2021 - this.birthYear;
+        return this.age;
+    },
+    getSummary: function () {
+        return `${this.firstName} is a ${this.age}-year old ${this.job}, and he has ${(this.hasDriversLicense) ? 'a' : 'no'} driver's license`
+    }
+};
+
+console.log(kas.calcAge1(kas['birthYear']));
+console.log(kas.calcAge2());
+kas.calcAge3();
+console.log(kas.age);
+console.log(kas.getSummary());
+
+/*
 // Dot vs. Bracket Notation
 const kas = {
     firstName: 'Kas',
@@ -31,7 +61,6 @@ console.log(kas);
 // Challenge
 console.log(`${kas.firstName} has ${kas.friends.length} friends, and his best friend is called ${kas.friends[0]}`);
 
-/*
 // Introduction to Objects
 const jonas = {
     firstName: 'Jonas',
