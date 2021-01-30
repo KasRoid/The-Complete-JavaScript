@@ -1,5 +1,11 @@
 'use strict';
 
+// The for Loop
+for (let rep = 1; rep <= 10; rep++) {
+    console.log(`Lifting weights repetition ${rep}`);
+}
+
+/*
 // Coding Challenges #3
 const mark = {
     fullName: 'Mark Miller',
@@ -33,7 +39,6 @@ const compareBMI = (lhs, rhs) => {
 
 compareBMI(mark.calcBMI(), john.calcBMI());
 
-/*
 // Objects Methods
 const kas = {
     firstName: 'Kas',
