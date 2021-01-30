@@ -1,11 +1,38 @@
 'use strict';
 
+// Looping Arrays, Breaking and Continuing
+const kas = [
+    'Kas',
+    'Song',
+    2021 - 1988,
+    'iOS Developer',
+    ['Michael', 'Peter', 'Steven']
+];
+
+const types = [];
+
+for (let i = 0; i < kas.length; i++) {
+    console.log(kas[i], typeof kas[i]);
+    // types[i] = typeof kas[i];
+    types.push(typeof kas[i]);
+}
+
+console.log(types);
+
+const years = [1988, 2007, 1969, 2012];
+const ages = [];
+
+for (let i = 0; i < years.length; i++) {
+    ages.push(2021 - years[i]);
+}
+console.log(ages);
+
+/*
 // The for Loop
 for (let rep = 1; rep <= 10; rep++) {
     console.log(`Lifting weights repetition ${rep}`);
 }
 
-/*
 // Coding Challenges #3
 const mark = {
     fullName: 'Mark Miller',
