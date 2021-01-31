@@ -1,5 +1,20 @@
 'use strict';
 
+// The while Loop
+let rep = 1;
+while (rep <= 10) {
+    console.log(`Lifting weights repetition ${rep}`);
+    rep++;
+}
+
+let dice = Math.trunc(Math.random() * 6) + 1;
+while (dice !== 6) {
+    console.log(`You rolled a ${dice}`);
+    dice = Math.trunc(Math.random() * 6) + 1;
+    if (dice === 6) console.log(`You Finally rolled a ${dice}!!!`)
+}
+
+/*
 // Looping Backwards and Loops in Loops
 const kas = [
     'Kas',
@@ -20,7 +35,6 @@ for (let exercise = 1; exercise < 4; exercise++) {
     }
 }
 
-/*
 // Looping Arrays, Breaking and Continuing
 const kas = [
     'Kas',
