@@ -1,5 +1,26 @@
 'use strict';
 
+// Looping Backwards and Loops in Loops
+const kas = [
+    'Kas',
+    'Song',
+    2021 - 1988,
+    'iOS Developer',
+    ['Michael', 'Peter', 'Steven']
+];
+
+for (let i = kas.length - 1; i >= 0; i--) {
+    console.log(i, kas[i]);
+}
+
+for (let exercise = 1; exercise < 4; exercise++) {
+    console.log(`-------- Starting exercise ${exercise}`);
+    for (let rep = 1; rep < 6; rep++) {
+        console.log(`Lifting weight repetition ${rep}🏋🏼‍♀️`);
+    }
+}
+
+/*
 // Looping Arrays, Breaking and Continuing
 const kas = [
     'Kas',
@@ -27,7 +48,6 @@ for (let i = 0; i < years.length; i++) {
 }
 console.log(ages);
 
-/*
 // The for Loop
 for (let rep = 1; rep <= 10; rep++) {
     console.log(`Lifting weights repetition ${rep}`);
