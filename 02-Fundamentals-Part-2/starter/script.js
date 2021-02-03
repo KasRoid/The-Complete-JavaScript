@@ -1,36 +1,36 @@
-'use strict';
+"use strict";
 
 // Coding Challenge #4
 const bills = [22, 295, 176, 440, 37, 105, 10, 1100, 86, 52];
 let tips = [];
 let totals = [];
 
-const calcTip = bill => {
-    if (bill >= 50 && bill <= 300) {
-        return bill * 0.15;
-    } else {
-        return bill * 0.2;
-    }
-}
+const calcTip = (bill) => {
+  if (bill >= 50 && bill <= 300) {
+    return bill * 0.15;
+  } else {
+    return bill * 0.2;
+  }
+};
 
 for (let i = 0; i < bills.length; i++) {
-    let tip = calcTip(bills[i]);
-    let total = bills[i] + tip;
-    tips.push(tip);
-    totals.push(total);
+  let tip = calcTip(bills[i]);
+  let total = bills[i] + tip;
+  tips.push(tip);
+  totals.push(total);
 }
 
 console.log(`Tips: ${tips}`);
 console.log(`Totals: ${totals}`);
 
-const calcAverage = arr => {
-    let total = 0;
-    for (let i = 0; i < arr.length; i++) {
-        total += arr[i];
-    }
-    const average = total / arr.length;
-    return average;
-}
+const calcAverage = (arr) => {
+  let total = 0;
+  for (let i = 0; i < arr.length; i++) {
+    total += arr[i];
+  }
+  const average = total / arr.length;
+  return average;
+};
 
 console.log(calcAverage(totals));
 

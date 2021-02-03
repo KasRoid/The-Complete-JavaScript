@@ -1,6 +1,23 @@
 // Remember, we're gonna use strict mode in all scripts now!
 "use strict";
 
+// Coding Challenge #1
+const testData1 = [17, 21, 23];
+const testData2 = [12, 5, -5, 0, 4];
+
+const printForecast = (arr) => {
+  let result = "";
+  for (let i = 0; i < arr.length; i++) {
+    const temperature = arr[i];
+    result += `${temperature}C in ${i + 1} days ... `;
+  }
+  console.log("... " + result);
+};
+
+printForecast(testData1);
+printForecast(testData2);
+
+/*
 // Debugging with the Console and Breakpoints
 const measureKelvin = function () {
   const measurement = {
@@ -42,7 +59,6 @@ const calcTempAmplitudeBug = (t1, t2) => {
 const amplitudeBug = calcTempAmplitudeBug([3, 5, 1], [9, 4, 5]);
 console.log(amplitudeBug);
 
-/*
 // Find Max and Min, Filtering by types, Concat arrays
 const temperatures = [3, -2, -6, -1, "error", 9, 13, 17, 15, 14, 9, 5];
 
