@@ -1,5 +1,15 @@
 'use strict';
 
+document.querySelector('.check').addEventListener('click', function () {
+  const guess = Number(document.querySelector('.guess').value);
+  console.log(guess);
+
+  if (!guess) {
+    document.querySelector('.message').textContent = 'No Number';
+  }
+});
+
+/*
 console.log(document.querySelector('.message').textContent);
 // DOM(Documnet Object Model) - Structured representation of HTML Documents. Allows JavaScript to access HTML elements and styles to manipulated them.
 
@@ -10,3 +20,4 @@ document.querySelector('.score').textContent = '1';
 
 document.querySelector('.guess').value = 23;
 console.log(document.querySelector('.guess').value);
+*/
