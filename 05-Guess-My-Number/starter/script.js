@@ -1,10 +1,22 @@
 'use strict';
 
-const secretNumber = Math.trunc(Math.random() * 20) + 1;
-document.querySelector('.number').textContent = secretNumber;
+let secretNumber = Math.trunc(Math.random() * 20) + 1;
+const resetGame = () => {
+  score = 20;
+  secretNumber = Math.trunc(Math.random() * 20) + 1;
+  document.querySelector('.score').textContent = score;
+  document.querySelector('.guess').value = '';
+  document.querySelector('.number').textContent = '?';
+  document.querySelector('.message').textContent = 'Start guessing...';
+  document.querySelector('body').style.backgroundColor = '#222';
+  document.querySelector('.number').style.width = '15rem';
+};
 
-let score = 3;
+let score = 20;
+let highScore = 0;
 document.querySelector('.score').textContent = score;
+document.querySelector('.again').addEventListener('click', resetGame);
+
 let gameCleared = false;
 
 document.querySelector('.check').addEventListener('click', function () {
@@ -20,6 +32,10 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.message').textContent = 'Correct Number!';
     document.querySelector('body').style.backgroundColor = '#60b347';
     document.querySelector('.number').style.width = '30rem';
+    if (score > highScore) {
+      document.querySelector('.highscore').textContent = score;
+      highScore = score;
+    }
   } else if (guess > secretNumber && score > 0) {
     // when guess is too high
     document.querySelector('.message').textContent = 'Too high!';
@@ -36,16 +52,3 @@ document.querySelector('.check').addEventListener('click', function () {
     document.querySelector('.message').textContent = 'You lost the game!';
   }
 });
-
-/*
-console.log(document.querySelector('.message').textContent);
-// DOM(Documnet Object Model) - Structured representation of HTML Documents. Allows JavaScript to access HTML elements and styles to manipulated them.
-
-document.querySelector('.message').textContent = 'Correct Number!';
-console.log(document.querySelector('.message').textContent);
-document.querySelector('.number').textContent = '13';
-document.querySelector('.score').textContent = '1';
-
-document.querySelector('.guess').value = 23;
-console.log(document.querySelector('.guess').value);
-*/
