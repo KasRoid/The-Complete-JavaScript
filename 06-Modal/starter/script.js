@@ -16,6 +16,12 @@ const closeModal = () => {
   overlay.classList.add("hidden");
 };
 
+const escKeyPressed = (event) => {
+  if (event.key === "Escape" && !modal.classList.contains("hidden")) {
+    closeModal();
+  }
+};
+
 // Setup
 const setup = () => {
   for (let i = 0; i < openModalButtons.length; i++) {
@@ -23,6 +29,7 @@ const setup = () => {
   }
   closeModalButton.addEventListener("click", closeModal);
   overlay.addEventListener("click", closeModal);
+  document.addEventListener("keydown", escKeyPressed);
 };
 
 setup();
