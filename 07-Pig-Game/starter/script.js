@@ -15,29 +15,61 @@ const holdButton = document.querySelector(".btn--hold");
 let scores = [0, 0];
 let currentScore = 0;
 let activePlayer = 0;
+let isGameOver = false;
+
+const switchPlayer = () => {
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  currentScore = 0;
+  player0E.classList.toggle("player--active");
+  player1E.classList.toggle("player--active");
+};
 
 const didClickRollButton = () => {
-  const dice = Math.trunc(Math.random() * 6) + 1;
-  diceEl.classList.remove("hidden");
-  diceEl.src = `dice-${dice}.png`;
-  if (dice !== 1) {
-    currentScore += dice;
-    document.getElementById(
-      `current--${activePlayer}`
-    ).textContent = currentScore;
-  } else {
-    document.getElementById(`current--${activePlayer}`).textContent = 0;
-    activePlayer = activePlayer === 0 ? 1 : 0;
-    currentScore = 0;
-    player0E.classList.toggle("player--active");
-    player1E.classList.toggle("player--active");
+  if (!isGameOver) {
+    const dice = Math.trunc(Math.random() * 6) + 1;
+    diceEl.classList.remove("hidden");
+    diceEl.src = `dice-${dice}.png`;
+    if (dice !== 1) {
+      currentScore += dice;
+      document.getElementById(
+        `current--${activePlayer}`
+      ).textContent = currentScore;
+    } else {
+      switchPlayer();
+    }
   }
 };
 
-// Start Conditions
-score1El.textContent = "0";
-score2El.textContent = "0";
-diceEl.classList.add("hidden");
+const didClickHoldButton = () => {
+  if (!isGameOver) {
+    scores[activePlayer] += currentScore;
+    document.getElementById(`score--${activePlayer}`).textContent =
+      scores[activePlayer];
+    if (scores[activePlayer] >= 20) {
+      isGameOver = true;
+      diceEl.classList.add("hidden");
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.add("player--winner");
+      document
+        .querySelector(`.player--${activePlayer}`)
+        .classList.remove("player--active");
+    } else {
+      switchPlayer();
+    }
+  }
+};
 
-// Rolling dice functionality
-rollButton.addEventListener("click", didClickRollButton);
+const build = () => {
+  // Start Conditions
+  score1El.textContent = "0";
+  score2El.textContent = "0";
+  diceEl.classList.add("hidden");
+
+  // Rolling dice functionality
+  rollButton.addEventListener("click", didClickRollButton);
+  holdButton.addEventListener("click", didClickHoldButton);
+};
+
+build();
