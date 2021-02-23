@@ -3,19 +3,17 @@
 // Score Elements
 const player0E = document.querySelector(".player--0");
 const player1E = document.querySelector(".player--1");
-const score1El = document.querySelector("#score--0");
-const score2El = document.getElementById("score--1");
+const score0El = document.querySelector("#score--0");
+const score1El = document.getElementById("score--1");
 const current0El = document.getElementById("current--0");
 const current1El = document.getElementById("current--1");
 const diceEl = document.querySelector(".dice");
 const newButton = document.querySelector(".btn--new");
 const rollButton = document.querySelector(".btn--roll");
 const holdButton = document.querySelector(".btn--hold");
+const maxValue = 100;
 
-let scores = [0, 0];
-let currentScore = 0;
-let activePlayer = 0;
-let isGameOver = false;
+let scores, currentScore, activePlayer, isGameOver;
 
 const switchPlayer = () => {
   document.getElementById(`current--${activePlayer}`).textContent = 0;
@@ -46,7 +44,7 @@ const didClickHoldButton = () => {
     scores[activePlayer] += currentScore;
     document.getElementById(`score--${activePlayer}`).textContent =
       scores[activePlayer];
-    if (scores[activePlayer] >= 20) {
+    if (scores[activePlayer] >= maxValue) {
       isGameOver = true;
       diceEl.classList.add("hidden");
       document
@@ -61,15 +59,33 @@ const didClickHoldButton = () => {
   }
 };
 
+const resetGame = () => {
+  if (activePlayer) {
+    document
+      .querySelector(`.player--${activePlayer}`)
+      .classList.remove("player--winner");
+  }
+  activePlayer = 0;
+  scores = [0, 0];
+  currentScore = 0;
+  isGameOver = false;
+  diceEl.classList.add("hidden");
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+  document
+    .querySelector(`.player--${activePlayer}`)
+    .classList.add("player--active");
+};
+
 const build = () => {
   // Start Conditions
-  score1El.textContent = "0";
-  score2El.textContent = "0";
-  diceEl.classList.add("hidden");
-
+  resetGame();
   // Rolling dice functionality
   rollButton.addEventListener("click", didClickRollButton);
   holdButton.addEventListener("click", didClickHoldButton);
+  newButton.addEventListener("click", resetGame);
 };
 
 build();
