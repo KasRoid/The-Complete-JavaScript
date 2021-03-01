@@ -16,3 +16,40 @@ function calcAge(birthYear) {
 
 const firstName = "Kas";
 calcAge(1988);
+
+// Hoisting and TDZ Practice
+console.log(me);
+// console.log(teacher);
+// console.log(year);
+
+var me = "Kas";
+let job = "iOS Developer";
+const year = 1988;
+
+console.log(addDecl(2, 3));
+// console.log(addEConst(2, 3));
+// console.log(addArror(2, 3));
+
+function addDecl(a, b) {
+  return a + b;
+}
+const addEConst = function addDecl(a, b) {
+  return a + b;
+};
+var addArror = (a, b) => a + b;
+
+// Example of Hoisting
+if (!numberOfProducts) deleteShoppingCart();
+var numberOfProducts = 10;
+
+function deleteShoppingCart() {
+  console.log("All products deleted!");
+}
+
+var x = 1;
+let y = 2;
+const z = 3;
+
+console.log(x === window.x);
+console.log(x === window.y);
+console.log(x === window.z);
