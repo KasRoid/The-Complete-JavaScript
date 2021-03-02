@@ -1,21 +1,35 @@
 "use strict";
 
-function calcAge(birthYear) {
-  const age = 2021 - birthYear;
+// The this Keyword in Practice
+console.log("this: ", this);
+const calculate = function (number) {
+  console.log(100 - number);
+  console.log("this in calculate: ", this);
+};
 
-  const output = `${firstName}, You are ${age}, born in ${birthYear}`;
-  console.log(output);
+const calculateArrow = number => {
+  console.log(100 - number);
+  console.log("this in calculateArrow: ", this);
+};
+calculate(10);
+calculateArrow(10);
 
-  if (birthYear >= 1981 && birthYear <= 1996) {
-    const firstName = "Steven";
-    const str = `Oh, and you're a millenial, ${firstName}`;
-    console.log(str);
-  }
-  return age;
-}
+const kas = {
+  year: 1988,
+  calcAge: function () {
+    console.log("this in kas: ", this);
+  },
+};
+kas.calcAge();
 
-const firstName = "Kas";
-calcAge(1988);
+const matilda = {
+  year: 1993,
+};
+matilda.calcAge = kas.calcAge;
+matilda.calcAge();
+
+const f = kas.calcAge;
+f();
 
 // Hoisting and TDZ Practice
 console.log(me);
@@ -53,3 +67,21 @@ const z = 3;
 console.log(x === window.x);
 console.log(x === window.y);
 console.log(x === window.z);
+
+// Scoping in Practice
+function calcAge(birthYear) {
+  const age = 2021 - birthYear;
+
+  const output = `${firstName}, You are ${age}, born in ${birthYear}`;
+  console.log(output);
+
+  if (birthYear >= 1981 && birthYear <= 1996) {
+    const firstName = "Steven";
+    const str = `Oh, and you're a millenial, ${firstName}`;
+    console.log(str);
+  }
+  return age;
+}
+
+const firstName = "Kas";
+calcAge(1988);
