@@ -1,6 +1,22 @@
 "use strict";
 console.clear();
 
+// Primitives vs. Objects
+let age = 30;
+let oldAge = age;
+age = 31;
+// console.log("age: ", age);
+// console.log("oldAge: ", oldAge);
+
+const i = {
+  name: "Kas",
+  age: 30,
+};
+const friend = i;
+friend.age = 27;
+console.log("I: ", i);
+console.log("Friend: ", friend);
+
 // Regular Functions vs. Arrow Functions
 const myself = {
   fistName: "kas",
@@ -24,11 +40,11 @@ const myself = {
   },
 };
 
-myself.calcAge();
-myself.greet();
+// myself.calcAge();
+// myself.greet();
 
 // The this Keyword in Practice
-console.log("this: ", this);
+// console.log("this: ", this);
 const calculate = function (number) {
   console.log(100 - number);
   console.log("this in calculate: ", this);
