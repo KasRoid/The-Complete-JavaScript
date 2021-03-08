@@ -37,23 +37,63 @@ const restaurant = {
       `Order received! ${this.starterMenu[starterIndex]} and ${this.mainMenu[mainIndex]} will be delivered to ${time} at ${address}`
     );
   },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(
+      `Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
+    );
+  },
 };
 
-restaurant.orderDelivery({
-  time: "22:30",
-  address: "Via del Sole, 21",
-  mainIndex: 2,
-  starterIndex: 2,
-});
+// The Spread Operator
+const array = [7, 8, 9];
+const newArray = [1, 2, ...array];
+console.log(newArray);
+console.log(...newArray);
 
-restaurant.orderDelivery({
-  address: "Goodnight Way. Apt 2",
-  starterIndex: 1,
-});
+const newMenu = [...restaurant.mainMenu, "Gnocci"];
+console.log(newMenu);
 
-// Destructing Object
+const mainMenuCopy = [...restaurant.mainMenu];
+const menuMerged = [...restaurant.starterMenu, ...restaurant.mainMenu];
+console.log(menuMerged);
+
+const str = "Kas"; // Iterables: arrays, strings, maps, sets. NOT Objects
+const letters = [...str, "Q"];
+console.log(letters);
+console.log(...str);
+
+// const ingredients = [
+//   prompt("Let's make pasta! Ingredients 1?"),
+//   prompt("Let's make pasta! Ingredients 2?"),
+//   prompt("Let's make pasta! Ingredients 3?"),
+// ];
+
+// restaurant.orderPasta(...ingredients);
+
+const newRestaurant = { ...restaurant, founder: "Kas Song" };
+console.log(newRestaurant);
+
+const restaurantCopy = { ...restaurant };
+restaurantCopy.name = "Ristorante Roma";
+console.log(restaurantCopy.name);
+console.log(restaurant.name);
+
+// restaurant.orderDelivery({
+//   time: "22:30",
+//   address: "Via del Sole, 21",
+//   mainIndex: 2,
+//   starterIndex: 2,
+// });
+
+// restaurant.orderDelivery({
+//   address: "Goodnight Way. Apt 2",
+//   starterIndex: 1,
+// });
+
+// Destructuring Objects
 const { name, openingHours, categories } = restaurant;
-console.log(name, openingHours, categories);
+// console.log(name, openingHours, categories);
 
 const {
   name: restaurantName,
@@ -61,21 +101,21 @@ const {
   categories: tags,
 } = restaurant;
 
-console.log(restaurantName, hours, tags);
+// console.log(restaurantName, hours, tags);
 
 const { menu = [], starterMenu: starters = [] } = restaurant; // Defualt Values
-console.log(menu, starters);
+// console.log(menu, starters);
 
 let g = 111; // Mutating Variables
 let h = 999;
 const obj = { g: 23, h: 7, i: 14 };
 ({ g, h } = obj);
-console.log(g, h);
+// console.log(g, h);
 
 const {
   fri: { open: openHour, close: closeHour },
 } = openingHours; // Nested Objects
-console.log(openHour, closeHour);
+// console.log(openHour, closeHour);
 
 // Destructuring Arrays
 const arr = [2, 3, 4];
