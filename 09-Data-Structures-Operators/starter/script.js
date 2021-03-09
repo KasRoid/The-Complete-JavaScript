@@ -43,25 +43,62 @@ const restaurant = {
       `Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
     );
   },
+
+  orderPizza: function (mainIngredient, ...otherIngredients) {
+    console.log(mainIngredient);
+    console.log(otherIngredients);
+  },
 };
+
+// Rest Pattern and Parameters
+const arr1 = [1, 2, ...[3, 4]]; // Spread
+const [a1, b1, ...others] = [1, 2, 3, 4, 5];
+console.log(a1, b1, others);
+
+const [pizza, , risotto, ...otherFood] = [
+  ...restaurant.mainMenu,
+  ...restaurant.starterMenu,
+];
+console.log(pizza, risotto, otherFood);
+
+const { sat, ...weekdays } = restaurant.openingHours;
+console.log(weekdays);
+
+const add = function (...numbers) {
+  console.log(numbers);
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+};
+
+add(2, 3);
+add(5, 3, 7, 2);
+
+const arrayX = [23, 5, 7];
+add(...arrayX);
+
+restaurant.orderPizza("mushrooms", "onion", "olives", "spinach");
+restaurant.orderPizza("mushrooms");
 
 // The Spread Operator
 const array = [7, 8, 9];
 const newArray = [1, 2, ...array];
-console.log(newArray);
-console.log(...newArray);
+// console.log(newArray);
+// console.log(...newArray);
 
 const newMenu = [...restaurant.mainMenu, "Gnocci"];
-console.log(newMenu);
+// console.log(newMenu);
 
 const mainMenuCopy = [...restaurant.mainMenu];
 const menuMerged = [...restaurant.starterMenu, ...restaurant.mainMenu];
-console.log(menuMerged);
+// console.log(menuMerged);
 
 const str = "Kas"; // Iterables: arrays, strings, maps, sets. NOT Objects
 const letters = [...str, "Q"];
-console.log(letters);
-console.log(...str);
+// console.log(letters);
+// console.log(...str);
 
 // const ingredients = [
 //   prompt("Let's make pasta! Ingredients 1?"),
@@ -72,12 +109,12 @@ console.log(...str);
 // restaurant.orderPasta(...ingredients);
 
 const newRestaurant = { ...restaurant, founder: "Kas Song" };
-console.log(newRestaurant);
+// console.log(newRestaurant);
 
 const restaurantCopy = { ...restaurant };
 restaurantCopy.name = "Ristorante Roma";
-console.log(restaurantCopy.name);
-console.log(restaurant.name);
+// console.log(restaurantCopy.name);
+// console.log(restaurant.name);
 
 // restaurant.orderDelivery({
 //   time: "22:30",
