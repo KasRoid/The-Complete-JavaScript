@@ -50,19 +50,47 @@ const restaurant = {
   },
 };
 
+// Short Circuiting
+restaurant.numGuests = 23;
+const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
+const guest2 = restaurant.numGuests || 10;
+
+const shortCircuitingConsoleLog = () => {
+  console.log("---OR---");
+  console.log(3 || "Kas");
+  console.log("" || "Kas");
+  console.log(true || 0);
+  console.log(undefined || null);
+  console.log(undefined || null || "" || 0);
+  console.log(guest1);
+  console.log(guest2);
+  console.log("---AND---");
+  console.log(0 && "Kas");
+  console.log(7 && "Kas");
+  console.log("Hello" && 23 && null && "Kas");
+
+  if (restaurant.orderPizza) {
+    restaurant.orderPizza("mushrooms", "spinach");
+  }
+
+  restaurant.orderPizza && restaurant.orderPizza("onion");
+};
+
+shortCircuitingConsoleLog();
+
 // Rest Pattern and Parameters
 const arr1 = [1, 2, ...[3, 4]]; // Spread
 const [a1, b1, ...others] = [1, 2, 3, 4, 5];
-console.log(a1, b1, others);
+// console.log(a1, b1, others);
 
 const [pizza, , risotto, ...otherFood] = [
   ...restaurant.mainMenu,
   ...restaurant.starterMenu,
 ];
-console.log(pizza, risotto, otherFood);
+// console.log(pizza, risotto, otherFood);
 
 const { sat, ...weekdays } = restaurant.openingHours;
-console.log(weekdays);
+// console.log(weekdays);
 
 const add = function (...numbers) {
   console.log(numbers);
@@ -73,14 +101,14 @@ const add = function (...numbers) {
   console.log(sum);
 };
 
-add(2, 3);
-add(5, 3, 7, 2);
+// add(2, 3);
+// add(5, 3, 7, 2);
 
 const arrayX = [23, 5, 7];
-add(...arrayX);
+// add(...arrayX);
 
-restaurant.orderPizza("mushrooms", "onion", "olives", "spinach");
-restaurant.orderPizza("mushrooms");
+// restaurant.orderPizza("mushrooms", "onion", "olives", "spinach");
+// restaurant.orderPizza("mushrooms");
 
 // The Spread Operator
 const array = [7, 8, 9];
