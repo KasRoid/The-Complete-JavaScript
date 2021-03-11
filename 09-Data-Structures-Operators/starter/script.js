@@ -50,6 +50,15 @@ const restaurant = {
   },
 };
 
+// Nullish Coalescing Operator
+restaurant.numGuests = 0;
+const guestCorrect = restaurant.numGuests ?? 10;
+const nullishCoalescingConosoleLog = () => {
+  console.log(guestCorrect);
+};
+
+nullishCoalescingConosoleLog();
+
 // Short Circuiting
 restaurant.numGuests = 23;
 const guest1 = restaurant.numGuests ? restaurant.numGuests : 10;
@@ -76,7 +85,7 @@ const shortCircuitingConsoleLog = () => {
   restaurant.orderPizza && restaurant.orderPizza("onion");
 };
 
-shortCircuitingConsoleLog();
+// shortCircuitingConsoleLog();
 
 // Rest Pattern and Parameters
 const arr1 = [1, 2, ...[3, 4]]; // Spread
