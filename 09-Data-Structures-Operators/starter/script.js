@@ -1,6 +1,24 @@
 // "use strict";
 console.clear();
 
+// Enhanced Object Literals
+const restaurnatWeekdays = ["mon", "tue", "wd", "thu", "fri", "sat", "sun"];
+
+const restaurantOpeningHours = {
+  [restaurnatWeekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [restaurnatWeekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  [restaurnatWeekdays[5]]: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+};
+
 const restaurant = {
   name: "Classico Italiano",
   location: "Via Angelo Tavanti 23, Firenze, Italy",
@@ -8,22 +26,9 @@ const restaurant = {
   starterMenu: ["Focaccia", "Bruschetta", "Garlic Bread", "Caprese Salad"],
   mainMenu: ["Pizza", "Pasta", "Risotto"],
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+  openingHours: restaurantOpeningHours,
 
-  order: function (starterIndex, mainIndex) {
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
   },
 
@@ -38,13 +43,13 @@ const restaurant = {
     );
   },
 
-  orderPasta: function (ing1, ing2, ing3) {
+  orderPasta(ing1, ing2, ing3) {
     console.log(
       `Here is your delicious pasta with ${ing1}, ${ing2}, and ${ing3}`
     );
   },
 
-  orderPizza: function (mainIngredient, ...otherIngredients) {
+  orderPizza(mainIngredient, ...otherIngredients) {
     console.log(mainIngredient);
     console.log(otherIngredients);
   },
