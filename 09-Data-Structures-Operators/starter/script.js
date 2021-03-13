@@ -50,6 +50,16 @@ const restaurant = {
   },
 };
 
+// Looping Arrays: The for-of Loop
+const restaurantMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
+for (const item of restaurantMenu) console.log(item);
+
+for (const [index, element] of restaurantMenu.entries()) {
+  console.log(`${index + 1}: ${element}`);
+}
+
+console.log(...restaurantMenu.entries());
+
 // Nullish Coalescing Operator
 restaurant.numGuests = 0;
 const guestCorrect = restaurant.numGuests ?? 10;
@@ -126,7 +136,7 @@ const challenge1ConsoleLog = () => {
   team1 > team2 && console.log("Team 2 is more likely to win");
 };
 
-challenge1ConsoleLog();
+// challenge1ConsoleLog();
 
 // Short Circuiting
 restaurant.numGuests = 23;
