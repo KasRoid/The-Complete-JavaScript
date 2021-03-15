@@ -2,7 +2,7 @@
 console.clear();
 
 // Enhanced Object Literals
-const restaurnatWeekdays = ["mon", "tue", "wd", "thu", "fri", "sat", "sun"];
+const restaurnatWeekdays = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
 const restaurantOpeningHours = {
   [restaurnatWeekdays[3]]: {
@@ -55,15 +55,48 @@ const restaurant = {
   },
 };
 
+// Optional Chaining
+const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
+
+const optionalChainingConsoleLog = () => {
+  console.log(restaurant.openingHours.mon?.open);
+  console.log(restaurant.openingHours.fri?.open);
+
+  for (const day of days) {
+    const open = restaurant.openingHours[day]?.open ?? "closed";
+    console.log(`On ${day}, we open at ${open}`);
+  }
+
+  console.log(restaurant.order?.(0, 1) ?? "Method does not exist");
+  console.log(restaurant.orderRisotto?.(0, 1) ?? "Method does not exist");
+
+  const users = [
+    {
+      name: "Kas",
+      email: "KasRoid@gmail.com",
+    },
+  ];
+  console.log(users[0]?.name ?? "User array empty");
+
+  if (users.length > 0) console.log(users[0].name);
+  else console.log("User array empty");
+};
+
+optionalChainingConsoleLog();
+
 // Looping Arrays: The for-of Loop
 const restaurantMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
-for (const item of restaurantMenu) console.log(item);
 
-for (const [index, element] of restaurantMenu.entries()) {
-  console.log(`${index + 1}: ${element}`);
-}
+const loopingArraysConsoleLog = () => {
+  for (const item of restaurantMenu) console.log(item);
 
-console.log(...restaurantMenu.entries());
+  for (const [index, element] of restaurantMenu.entries()) {
+    console.log(`${index + 1}: ${element}`);
+  }
+  console.log(...restaurantMenu.entries());
+};
+
+// loopingArraysConsoleLog();
 
 // Nullish Coalescing Operator
 restaurant.numGuests = 0;
