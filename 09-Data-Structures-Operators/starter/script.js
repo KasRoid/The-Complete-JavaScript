@@ -55,6 +55,34 @@ const restaurant = {
   },
 };
 
+// Looping Objects: Object Keys, Values, and Entries
+const loopingObjectsConsoleLog = () => {
+  const properties = Object.keys(restaurantOpeningHours);
+  console.log(properties);
+
+  let openStr = `We are open on ${properties.length} days: `;
+
+  for (const day of Object.keys(restaurantOpeningHours)) {
+    openStr += `${day}, `;
+  }
+  console.log(openStr);
+
+  const values = Object.values(restaurantOpeningHours);
+  console.log(values);
+
+  const entries = Object.entries(restaurantOpeningHours);
+  console.log(entries);
+
+  for (const entry of entries) {
+    console.log(entry);
+  }
+  for (const [key, { open, close }] of entries) {
+    console.log(`On ${key} we open at ${open} and close at ${close}`);
+  }
+};
+
+loopingObjectsConsoleLog();
+
 // Optional Chaining
 const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
 
@@ -82,7 +110,7 @@ const optionalChainingConsoleLog = () => {
   else console.log("User array empty");
 };
 
-optionalChainingConsoleLog();
+// optionalChainingConsoleLog();
 
 // Looping Arrays: The for-of Loop
 const restaurantMenu = [...restaurant.starterMenu, ...restaurant.mainMenu];
