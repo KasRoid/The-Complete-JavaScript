@@ -34,6 +34,8 @@ Date: Dec 18, 2020 - TBD
   - Strict Mode
   - Functions
   - Arrays
+  - Obejct Methods
+  - Looping Arrays
 
 ---
 
