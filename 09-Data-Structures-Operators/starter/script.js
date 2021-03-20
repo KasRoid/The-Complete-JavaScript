@@ -55,6 +55,85 @@ const restaurant = {
   },
 };
 
+// Coding Challenge #2
+const game = {
+  team1: "Bayern Munich",
+  team2: "Borrussia Dortmund",
+  players: [
+    [
+      "Neuer",
+      "Pavard",
+      "Martinez",
+      "Alaba",
+      "Davies",
+      "Kimmich",
+      "Goretzka",
+      "Coman",
+      "Muller",
+      "Gnarby",
+      "Lewandowski",
+    ],
+    [
+      "Burki",
+      "Schulz",
+      "Hummels",
+      "Akanji",
+      "Hakimi",
+      "Weigl",
+      "Witsel",
+      "Hazard",
+      "Brandt",
+      "Sancho",
+      "Gotze",
+    ],
+  ],
+  score: "4:0",
+  scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
+  date: "Nov 9th, 2037",
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+const codingChallenge2 = () => {
+  for (const [index, player] of game.scored.entries()) {
+    console.log(`Goal ${index + 1}: ${player}`);
+  }
+
+  const values = Object.values(game.odds);
+  let sumOfOdds = 0;
+  let average = 0;
+  for (const odd of values) sumOfOdds += odd;
+  average = sumOfOdds / values.length;
+  console.log(`Average of Odds: ${average}`);
+
+  const keys = Object.keys(game.odds);
+  for (const key of keys) {
+    let teamName = game[key] ?? "Draw";
+    if (teamName !== "Draw") teamName = `victory ${teamName}`;
+    console.log(`Odd of ${teamName}: ${game.odds[key]}`);
+  }
+
+  for (const player of game.scored) {
+    if (game.scorer) {
+      if (game.scorer[player]) {
+        const score = game.scorer[player] + 1;
+        game.scorer[player] = score;
+      } else {
+        game.scorer[player] = 1;
+      }
+    } else {
+      game.scorer = {};
+      game.scorer[player] = 1;
+    }
+  }
+  console.log(game.scorer);
+};
+
+codingChallenge2();
+
 // Looping Objects: Object Keys, Values, and Entries
 const loopingObjectsConsoleLog = () => {
   const properties = Object.keys(restaurantOpeningHours);
@@ -81,7 +160,7 @@ const loopingObjectsConsoleLog = () => {
   }
 };
 
-loopingObjectsConsoleLog();
+// loopingObjectsConsoleLog();
 
 // Optional Chaining
 const days = ["mon", "tue", "wed", "thu", "fri", "sat", "sun"];
@@ -136,47 +215,6 @@ const nullishCoalescingConosoleLog = () => {
 // nullishCoalescingConosoleLog();
 
 // Coding Challenge #1
-const game = {
-  team1: "Bayern Munich",
-  team2: "Borrussia Dortmund",
-  players: [
-    [
-      "Neuer",
-      "Pavard",
-      "Martinez",
-      "Alaba",
-      "Davies",
-      "Kimmich",
-      "Goretzka",
-      "Coman",
-      "Muller",
-      "Gnarby",
-      "Lewandowski",
-    ],
-    [
-      "Burki",
-      "Schulz",
-      "Hummels",
-      "Akanji",
-      "Hakimi",
-      "Weigl",
-      "Witsel",
-      "Hazard",
-      "Brandt",
-      "Sancho",
-      "Gotze",
-    ],
-  ],
-  score: "4:0",
-  scored: ["Lewandowski", "Gnarby", "Lewandowski", "Hummels"],
-  date: "Nov 9th, 2037",
-  odds: {
-    team1: 1.33,
-    x: 3.25,
-    team2: 6.5,
-  },
-};
-
 const [players1, players2] = game.players;
 const [gk, ...fieldPlayers] = game.players[0];
 
