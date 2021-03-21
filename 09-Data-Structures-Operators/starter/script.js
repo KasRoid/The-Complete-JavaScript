@@ -55,6 +55,45 @@ const restaurant = {
   },
 };
 
+// Sets
+const ordersSet = new Set([
+  "Pasta",
+  "Pizza",
+  "Pizza",
+  "Risotto",
+  "Pasta",
+  "Pizza",
+]);
+
+const setConsoleLog = () => {
+  console.log(ordersSet);
+  console.log(new Set("Kas"));
+  console.log(ordersSet.size);
+  console.log(ordersSet.has("Pizza"));
+  console.log(ordersSet.has("Bread"));
+  ordersSet.add("Garlic Bread");
+  ordersSet.add("Garlic Bread");
+  console.log(ordersSet);
+  ordersSet.delete("Garlic Bread");
+  console.log(ordersSet);
+  // ordersSet.clear();
+  console.log(ordersSet);
+
+  for (const order of ordersSet) console.log(order);
+
+  const staff = ["Waiter", "Chef", "Waiter", "Manager", "Chef", "Waiter"];
+  const staffSet = new Set(staff);
+  const staffArray = [...new Set(staff)];
+  console.log(staffSet);
+  console.log(staffArray);
+
+  const sample = "My name is Kas Song";
+  console.log(sample.length);
+  console.log(new Set(sample).size);
+};
+
+setConsoleLog();
+
 // Coding Challenge #2
 const game = {
   team1: "Bayern Munich",
@@ -132,7 +171,7 @@ const codingChallenge2 = () => {
   console.log(game.scorer);
 };
 
-codingChallenge2();
+// codingChallenge2();
 
 // Looping Objects: Object Keys, Values, and Entries
 const loopingObjectsConsoleLog = () => {
