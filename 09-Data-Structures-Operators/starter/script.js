@@ -55,6 +55,46 @@ const restaurant = {
   },
 };
 
+// Maps
+const mapsConsoleLog = () => {
+  const restaurantMap = new Map();
+  restaurantMap.set("name", "Classico Italiano");
+  restaurantMap.set(1, "Firenze, Italy");
+  restaurantMap.set(2, "Lisbon, Portugal");
+
+  restaurantMap
+    .set("categories", ["Italian", "Pizzeria"])
+    .set("open", 11)
+    .set("close", 23)
+    .set(true, "We are open")
+    .set(false, "We are closed");
+
+  console.log(restaurantMap);
+  console.log(restaurantMap.get("name"));
+  console.log(restaurantMap.get(true));
+  console.log(restaurantMap.get(1));
+
+  const time = 21;
+  console.log(
+    restaurantMap.get(
+      time > restaurantMap.get("open") && time < restaurantMap.get("close")
+    )
+  );
+
+  console.log(restaurantMap.has("open"));
+  restaurantMap.delete(2);
+  console.log(restaurantMap.has(2));
+  console.log(restaurantMap.size);
+  restaurantMap.clear();
+  console.log(restaurantMap.size);
+
+  const arrayKey = [1, 2];
+  restaurantMap.set(arrayKey, "Test");
+  console.log(restaurantMap.get(arrayKey));
+};
+
+mapsConsoleLog();
+
 // Sets
 const ordersSet = new Set([
   "Pasta",
@@ -92,7 +132,7 @@ const setConsoleLog = () => {
   console.log(new Set(sample).size);
 };
 
-setConsoleLog();
+// setConsoleLog();
 
 // Coding Challenge #2
 const game = {
