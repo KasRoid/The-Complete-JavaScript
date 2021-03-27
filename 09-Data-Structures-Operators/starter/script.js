@@ -55,7 +55,41 @@ const restaurant = {
   },
 };
 
-// Maps
+// Maps - Iteration
+const mapsIteration = () => {
+  const question = new Map([
+    ["question", "What is the best programming language in the world?"],
+    [1, "C"],
+    [2, "Java"],
+    [3, "JavaScript"],
+    ["correct", 3],
+    [true, "Correct"],
+    [false, "Try again!"],
+  ]);
+  console.log(question);
+
+  const hoursMap = new Map(Object.entries(restaurantOpeningHours));
+  console.log(hoursMap);
+
+  console.log(question.get("question"));
+  for (const [key, value] of question) {
+    if (typeof key === "number") console.log(`Answer ${key}: ${value}`);
+  }
+  const answer = Number(prompt("Your answer"));
+  console.log(
+    answer === question.get("correct")
+      ? question.get(true)
+      : question.get(false)
+  );
+
+  console.log([...question]);
+  // console.log([...question.entries()]);
+  console.log([...question.keys()]);
+  console.log([...question.values()]);
+};
+mapsIteration();
+
+// Maps - Fundamentals
 const mapsConsoleLog = () => {
   const restaurantMap = new Map();
   restaurantMap.set("name", "Classico Italiano");
@@ -93,7 +127,7 @@ const mapsConsoleLog = () => {
   console.log(restaurantMap.get(arrayKey));
 };
 
-mapsConsoleLog();
+// mapsConsoleLog();
 
 // Sets
 const ordersSet = new Set([
