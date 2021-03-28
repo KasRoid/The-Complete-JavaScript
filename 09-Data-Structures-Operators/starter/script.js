@@ -55,6 +55,44 @@ const restaurant = {
   },
 };
 
+// Coding Challenge #3
+const codingChallenge3 = () => {
+  const gameEvents = new Map([
+    [17, "⚽️ GOAL"],
+    [36, "🔁 Substitution"],
+    [47, "⚽️ GOAL"],
+    [61, "🔁 Substitution"],
+    [64, "🔶 Yellow card"],
+    [69, "🔴 Red card"],
+    [70, "🔁 Substitution"],
+    [72, "🔁 Substitution"],
+    [76, "⚽️ GOAL"],
+    [80, "⚽️ GOAL"],
+    [92, "🔶 Yellow card"],
+  ]);
+  const gameMinutes = 90;
+
+  // 1
+  const events = [...new Set(gameEvents.values())];
+  console.log(events);
+  // 2
+  gameEvents.delete(64);
+  console.log(gameEvents);
+  // 3
+  console.log(
+    `An event happend, on average, every ${
+      gameMinutes / gameEvents.size
+    } minutes`
+  );
+  // 4
+  for (const [key, value] of gameEvents) {
+    const time = key <= 45 ? "[FIRST HALF]" : "[SECOND HALF]";
+    console.log(`${time} ${key}: ${value}`);
+  }
+};
+
+codingChallenge3();
+
 // Maps - Iteration
 const mapsIteration = () => {
   const question = new Map([
@@ -87,7 +125,7 @@ const mapsIteration = () => {
   console.log([...question.keys()]);
   console.log([...question.values()]);
 };
-mapsIteration();
+// mapsIteration();
 
 // Maps - Fundamentals
 const mapsConsoleLog = () => {
