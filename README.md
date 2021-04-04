@@ -36,6 +36,10 @@ Date: Dec 18, 2020 - TBD
   - Arrays
   - Obejct Methods
   - Looping Arrays
+  - DOM
+  - Handling Click Events
+  - Handling Key Press Events
+  - 'this' Keyword
 
 ---
 
