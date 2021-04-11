@@ -55,6 +55,51 @@ const restaurant = {
   },
 };
 
+const workingWithString3 = () => {
+  console.log("a+very+nice+string".split("+"));
+  console.log("Kas Song".split(" "));
+
+  const [firstName, lastName] = "Kas Song".split(" ");
+  const newName = ["Mr.", firstName, lastName.toUpperCase()].join(" ");
+  console.log(newName);
+
+  const capitalizeName = name => {
+    let resultArray = [];
+    let splittedName = name.split(" ");
+    for (const word of splittedName) {
+      resultArray.push(word[0].toUpperCase() + word.slice(1));
+    }
+    console.log(resultArray.join(" "));
+  };
+
+  capitalizeName("jessica ann smith davis");
+
+  const message = "Go to gate 23!";
+  console.log(message.padStart(25, "+"));
+  console.log("Kas".padStart(25, "+"));
+  console.log(message.padEnd(25, "+"));
+  console.log("Kas".padStart(13, "+").padEnd(25, "+"));
+
+  const maskCreditCard = number => {
+    const str = number + "";
+    const last = str.slice(-4);
+    return last.padStart(str.length, "*");
+  };
+
+  console.log(maskCreditCard(43373287283728));
+  console.log(maskCreditCard("4123371323847283728"));
+
+  const message2 = "Bad weather... All Departures Delayed... ";
+  console.log(message2.repeat(5));
+
+  const planesInLine = number => {
+    console.log(`There are ${number} planes in line ${"🛩".repeat(number)}`);
+  };
+  planesInLine(5);
+};
+
+workingWithString3();
+
 // Working with Strings Part 2
 const workingWithStrings2 = () => {
   const airline = "TAP Air Portugal";
@@ -108,7 +153,7 @@ const workingWithStrings2 = () => {
   checkBaggage("Got some snacks and a gun for protection");
 };
 
-workingWithStrings2();
+// workingWithStrings2();
 
 // Working with Strings Part 1
 const workingWithStrings1 = () => {
