@@ -55,6 +55,33 @@ const restaurant = {
   },
 };
 
+document.body.append(document.createElement("textarea"));
+document.body.append(document.createElement("button"));
+
+let sampleText =
+  "underscore_case\n first_name \nSome_Variable \n  calculate_AGE\ndelayed_departure";
+document.querySelector("textarea").value = sampleText;
+
+document.querySelector("button").addEventListener("click", function () {
+  const text = document.querySelector("textarea").value;
+  const words = text.split("\n");
+  for (const [index, word] of words.entries()) {
+    const trimmedWord = word.trim();
+    const lowerCasedWord = trimmedWord.toLowerCase();
+    const splittedWords = lowerCasedWord.split("_");
+    let resultArray = [];
+    for (const [index, splittedWord] of splittedWords.entries()) {
+      if (index !== 0) {
+        resultArray.push(splittedWord[0].toUpperCase() + splittedWord.slice(1));
+      } else {
+        resultArray.push(splittedWord);
+      }
+    }
+    const checkMark = "✅".repeat(index + 1);
+    console.log(`${resultArray.join("").padEnd(20, " ")} ${checkMark}`);
+  }
+});
+
 const workingWithString3 = () => {
   console.log("a+very+nice+string".split("+"));
   console.log("Kas Song".split(" "));
@@ -98,7 +125,7 @@ const workingWithString3 = () => {
   planesInLine(5);
 };
 
-workingWithString3();
+// workingWithString3();
 
 // Working with Strings Part 2
 const workingWithStrings2 = () => {
