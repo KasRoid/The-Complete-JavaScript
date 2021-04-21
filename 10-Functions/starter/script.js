@@ -1,9 +1,22 @@
 'use strict';
 console.clear();
 
-functionsAcceptingCallbackFunctions();
+functionsReturningFunctions();
+// functionsAcceptingCallbackFunctions();
 // passingArguments();
 // defaultParameters();
+
+function functionsReturningFunctions() {
+  const greet = greeting => {
+    return name => {
+      console.log(`${greeting} ${name}`);
+    };
+  };
+  const greeterHey = greet('Hey');
+  greeterHey('Kas');
+  greeterHey('Steven');
+  greet('Hello')('Kas');
+}
 
 function functionsAcceptingCallbackFunctions() {
   const oneWord = function (str) {
