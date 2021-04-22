@@ -1,10 +1,39 @@
 'use strict';
 console.clear();
 
-functionsReturningFunctions();
+theCallAndApplyMethods();
+// functionsReturningFunctions();
 // functionsAcceptingCallbackFunctions();
 // passingArguments();
 // defaultParameters();
+
+function theCallAndApplyMethods() {
+  const lufthansa = {
+    airline: 'Lufthansa',
+    iataCode: 'LH',
+    bookings: [],
+    book(flightNumber, name) {
+      console.log(
+        `${name} booked a seat on ${this.airline} flight ${this.iataCode}${flightNumber}`
+      );
+      this.bookings.push({ flight: `${this.iataCode}${flightNumber}`, name });
+    },
+  };
+
+  lufthansa.book(239, 'Kas Song');
+  lufthansa.book(635, 'John Smith');
+  console.log(lufthansa.bookings);
+
+  const eurowings = {
+    name: 'Eurowings',
+    iataCode: 'EW',
+    bookings: [],
+  };
+
+  const book = lufthansa.book;
+
+  book(23, 'Sarah Williams');
+}
 
 function functionsReturningFunctions() {
   const greet = greeting => {
