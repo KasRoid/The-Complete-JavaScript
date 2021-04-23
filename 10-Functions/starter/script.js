@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 console.clear();
 
 theCallAndApplyMethods();
@@ -9,8 +9,8 @@ theCallAndApplyMethods();
 
 function theCallAndApplyMethods() {
   const lufthansa = {
-    airline: 'Lufthansa',
-    iataCode: 'LH',
+    airline: "Lufthansa",
+    iataCode: "LH",
     bookings: [],
     book(flightNumber, name) {
       console.log(
@@ -20,41 +20,57 @@ function theCallAndApplyMethods() {
     },
   };
 
-  lufthansa.book(239, 'Kas Song');
-  lufthansa.book(635, 'John Smith');
+  lufthansa.book(239, "Kas Song");
+  lufthansa.book(635, "John Smith");
   console.log(lufthansa.bookings);
 
   const eurowings = {
-    name: 'Eurowings',
-    iataCode: 'EW',
+    airline: "Eurowings",
+    iataCode: "EW",
     bookings: [],
   };
 
   const book = lufthansa.book;
 
-  book(23, 'Sarah Williams');
+  // book(23, 'Sarah Williams');
+  book.call(eurowings, 23, "Sarah Williams");
+  console.log(eurowings);
+  book.call(lufthansa, 239, "Mary Cooper");
+
+  const swiss = {
+    airline: "Swiss Air Lines",
+    iataCode: "LX",
+    bookings: [],
+  };
+
+  book.call(swiss, 583, "Mary Cooper");
+  console.log(swiss);
+
+  const flightData = [583, "George Cooper"];
+  book.apply(swiss, flightData);
+  book.call(swiss, ...flightData);
 }
 
 function functionsReturningFunctions() {
-  const greet = greeting => {
-    return name => {
+  const greet = (greeting) => {
+    return (name) => {
       console.log(`${greeting} ${name}`);
     };
   };
-  const greeterHey = greet('Hey');
-  greeterHey('Kas');
-  greeterHey('Steven');
-  greet('Hello')('Kas');
+  const greeterHey = greet("Hey");
+  greeterHey("Kas");
+  greeterHey("Steven");
+  greet("Hello")("Kas");
 }
 
 function functionsAcceptingCallbackFunctions() {
   const oneWord = function (str) {
-    return str.replace(/ /g, '').toLowerCase();
+    return str.replace(/ /g, "").toLowerCase();
   };
 
   const upperFirstWord = function (str) {
-    const [first, ...others] = str.split(' ');
-    return [first.toUpperCase(), ...others].join(' ');
+    const [first, ...others] = str.split(" ");
+    return [first.toUpperCase(), ...others].join(" ");
   };
 
   const transformer = (str, fn) => {
@@ -62,30 +78,30 @@ function functionsAcceptingCallbackFunctions() {
     console.log(`Transformed string: ${fn(str)}`);
     console.log(`Transformed by: ${fn.name}`);
   };
-  transformer('JavaScript is the best!', upperFirstWord);
-  transformer('JavaScript is the best!', oneWord);
+  transformer("JavaScript is the best!", upperFirstWord);
+  transformer("JavaScript is the best!", oneWord);
 
   const punch = () => {
-    console.log('👊🏼');
+    console.log("👊🏼");
   };
-  document.body.addEventListener('click', punch);
+  document.body.addEventListener("click", punch);
 
-  ['Kas', 'Martha', 'Adam'].forEach(punch);
+  ["Kas", "Martha", "Adam"].forEach(punch);
 }
 
 function passingArguments() {
-  const flight = 'LH234';
+  const flight = "LH234";
   const kas = {
-    name: 'Kas Song',
+    name: "Kas Song",
     passport: 23242523523,
   };
   const checkIn = (flightNumber, passenger) => {
-    flightNumber = 'LH999';
-    passenger.name = 'Mr. ' + passenger;
+    flightNumber = "LH999";
+    passenger.name = "Mr. " + passenger;
     if (passenger.passport === 23242523523) {
-      console.log('Checked in');
+      console.log("Checked in");
     } else {
-      console.log('Wrong passport!');
+      console.log("Wrong passport!");
     }
   };
   checkIn(flight, kas);
@@ -95,7 +111,7 @@ function passingArguments() {
   const flightNumber = flight;
   const passenger = kas;
 
-  const newPassport = person => {
+  const newPassport = (person) => {
     person.passport = Math.trunc(Math.random() * 10000000000);
   };
   newPassport(kas);
@@ -113,6 +129,6 @@ function defaultParameters() {
     console.log(booking);
     bookings.push(booking);
   };
-  createBooking('LH123');
-  createBooking('LH123', '2', '800');
+  createBooking("LH123");
+  createBooking("LH123", "2", "800");
 }
