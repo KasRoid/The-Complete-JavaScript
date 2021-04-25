@@ -1,11 +1,38 @@
 "use strict";
 console.clear();
 
-theCallAndApplyMethods();
+codingChallenge1();
+// theCallAndApplyMethods();
 // functionsReturningFunctions();
 // functionsAcceptingCallbackFunctions();
 // passingArguments();
 // defaultParameters();
+
+function codingChallenge1() {
+  const poll = {
+    question: "What is your favorite programming language?",
+    options: ["0: JavaScript", "1: Python", "2: Swift", "3: C++"],
+    answers: new Array(4).fill(0),
+    registerNewAnswer: function () {
+      const answer = prompt(
+        `${this.question}\n${this.options.join(`\n`)}\n(Write option number)`
+      );
+      if (answer >= 0 && answer < 4) this.answers[answer]++;
+      console.log(this.answers);
+    },
+    displayResults: function (type) {
+      if (typeof type === "String") {
+        console.log("asdf");
+      }
+    },
+  };
+  poll.registerNewAnswer();
+  poll.displayResults("asdss");
+
+  document
+    .querySelector(`.poll`)
+    .addEventListener("click", poll.registerNewAnswer.bind(poll));
+}
 
 function theCallAndApplyMethods() {
   const lufthansa = {
